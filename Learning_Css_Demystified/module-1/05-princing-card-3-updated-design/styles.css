@@ -13,6 +13,7 @@
   ////////////// */
 
 body {
+  margin: 0;
   font-family: "Roboto", sans-serif;
   text-align: center;
 }
@@ -131,6 +132,11 @@ body {
 /* ///////////////
   Teams
   ////////////// */
+
+.team{
+  background-color: #fafafa;
+  padding: 2r em 0;
+}
 
 .team-members {
   display: flex;
