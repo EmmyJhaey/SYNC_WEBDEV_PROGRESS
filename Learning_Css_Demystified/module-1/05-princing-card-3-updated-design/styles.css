@@ -174,7 +174,7 @@ section {
 }
 
 .team-member {
-	background: #abc;
+	/* background: #abc; */
 	text-align: left;
 	flex: 1 1 45%;
 	margin: 1em;
@@ -187,4 +187,31 @@ section {
 .team-member img {
 	width: 10rem;
 	border-radius: 0.25em;
+  margin-right: 1rem;
 }
+
+.team-member .name{
+  color: var(--pop);
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.team-member .position{
+  margin: 0;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+.team-member--mirrored {
+  padding: 0.5em 0.5em 0.5em 2em;
+}
+
+.team-member--mirrored img{
+  order: 2;
+  margin: 0;
+  margin-left: 1rem;
+}
+
+
+
+
