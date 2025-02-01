@@ -19,7 +19,37 @@
   --border-radius: 0.75rem;
 }
 
+/* /////////////
+      RESET
+///////////// */
 
+*,
+::after,
+::before{
+  box-sizing: border-box;
+}
+
+/* /////////////
+  Global Styling
+///////////// */
+
+body{
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: var(--clr-base-400);
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+h2,p{
+  margin: 0;
+}
+
+.name{
+  font-family: "Podkova", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
 
 
 
@@ -66,6 +96,7 @@
   gap: 0.5em;
   box-shadow: var(--shadow);
   border-radius: var(--border-radius);
+  padding: 1rem;
 }
 
 @media (min-width: 500px) {
