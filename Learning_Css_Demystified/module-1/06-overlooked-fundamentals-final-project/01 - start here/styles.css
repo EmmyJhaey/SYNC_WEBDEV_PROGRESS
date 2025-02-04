@@ -1,22 +1,22 @@
 :root {
-  --clr-base-400: #5e5e5e;
-  --clr-base-500: #494949;
+	--clr-base-400: #5e5e5e;
+	--clr-base-500: #494949;
 
-  --clr-ui-300: #f8e2ff;
-  --clr-ui-400: #580d3a;
-  --clr-ux-300: #e2ffea;
-  --clr-ux-400: #115926;
-  --clr-dev-300: #e2fcff;
-  --clr-dev-400: #024f4f;
+	--clr-ui-300: #f8e2ff;
+	--clr-ui-400: #580d3a;
+	--clr-ux-300: #e2ffea;
+	--clr-ux-400: #115926;
+	--clr-dev-300: #e2fcff;
+	--clr-dev-400: #024f4f;
 
-  --ff-accent: "Podkova", serif;
-  --ff-base: "Open Sans", sans-serif;
+	--ff-accent: "Podkova", serif;
+	--ff-base: "Open Sans", sans-serif;
 
-  --fw-400: 400;
-  --fw-700: 700;
+	--fw-400: 400;
+	--fw-700: 700;
 
-  --shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
-  --border-radius: 0.75rem;
+	--shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
+	--border-radius: 0.75rem;
 }
 
 /* /////////////
@@ -25,50 +25,91 @@
 
 *,
 ::after,
-::before{
-  box-sizing: border-box;
+::before {
+	box-sizing: border-box;
+}
+
+
+h2,
+p {
+	margin: 0;
 }
 
 /* /////////////
   Global Styling
 ///////////// */
 
-body{
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
-  color: var(--clr-base-400);
-  font-size: 1rem;
-  line-height: 1.5rem;
+body {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 400;
+	color: var(--clr-base-400);
+	font-size: 1rem;
+	line-height: 1.5rem;
 }
 
-h2,p{
+
+.name {
+	font-family: "Podkova", sans-serif;
+	font-weight: 700;
+	font-size: 2rem;
+	color: var(--clr-base-500);
+}
+
+img{
+  border-radius: .3rem;
+}
+
+
+/* Role Styling */
+
+.roles {
   margin: 0;
+	--pink: var(--clr-ui-300);
+	--darker_pink: var(--clr-ui-400);
+	--green: var(--clr-ux-300);
+	--darker_green: var(--clr-ux-400);
 }
 
-.name{
-  font-family: "Podkova", sans-serif;
-  font-weight: 700;
-  font-size: 2rem;
+.role {
+  font-size: 0.67rem;
+	padding: 0.4em 0.7em;
+	border-radius: 10px;
+	margin-right: 10px;
+	font-weight: 700;
+}
+
+.role:nth-child(1) {
+	background: var(--pink, var(--clr-base-400));
+	color: var(--darker_pink, var(--clr-base-500));
+}
+
+.role:nth-child(2) {
+  background: var(--green, var(--clr-base-400));
+	color: var(--darker_green, var(--clr-base-500));
 }
 
 
+/* Layout Styling  */
+.social{
+  /* min-width: 70%; */
+  width: 70%;
+  list-style-type: none;
+  display: flex;
+  gap: 2rem;
+  
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.btn{
+  text-align: center;
+  text-decoration: none;
+  color: var(--clr-dev-300);
+  background: var(--clr-ui-400);
+  /* line-height: 0; */
+  padding: .4em 1.6em;
+  margin-left: 11rem;
+  border-radius: 1rem;
+  max-height: 2.3rem;
+}
 
 /* /////////////////
    Layout related
@@ -76,61 +117,61 @@ h2,p{
 //////////////////*/
 
 .candidates {
-  max-width: 70em;
-  margin: 0 auto;
-  padding: 2em;
-  display: grid;
-  gap: 2em;
+	max-width: 70em;
+	margin: 0 auto;
+	padding: 2em;
+	display: grid;
+	gap: 2em;
 }
 
 .candidate {
-  margin-left: auto;
-  margin-right: auto;
-  display: grid;
-  grid-template-areas:
-    "img social"
-    "name name"
-    "role role"
-    "bio bio"
-    "button button";
-  gap: 0.5em;
-  box-shadow: var(--shadow);
-  border-radius: var(--border-radius);
-  padding: 1rem;
+	margin-left: auto;
+	margin-right: auto;
+	display: grid;
+	grid-template-areas:
+		"img social"
+		"name name"
+		"role role"
+		"bio bio"
+		"button button";
+	gap: 0.5em;
+	box-shadow: var(--shadow);
+	border-radius: var(--border-radius);
+	padding: 1rem;
 }
 
 @media (min-width: 500px) {
-  .candidate {
-    grid-template-columns: min-content minmax(15rem, 22.5rem);
-    grid-template-areas:
-      "img name"
-      "img role"
-      "img bio"
-      "social button";
-  }
+	.candidate {
+		grid-template-columns: min-content minmax(15rem, 22.5rem);
+		grid-template-areas:
+			"img name"
+			"img role"
+			"img bio"
+			"social button";
+	}
 }
 
 @media (min-width: 960px) {
-  .candidates {
-    grid-template-columns: repeat(2, 1fr);
-  }
+	.candidates {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 .candidate img {
-  grid-area: img;
+	grid-area: img;
 }
 .candidate .name {
-  grid-area: name;
+	grid-area: name;
 }
 .candidate .roles {
-  grid-area: role;
+	grid-area: role;
 }
 .candidate .bio {
-  grid-area: bio;
+	grid-area: bio;
 }
 .candidate .social {
-  grid-area: social;
+	grid-area: social;
 }
 .candidate .btn {
-  grid-area: button;
+	grid-area: button;
 }
